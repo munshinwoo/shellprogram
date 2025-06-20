@@ -10,6 +10,8 @@ REMOTE_NAME="origin"
 
 COMMIT_MESSAGE="code update"
 
+
+
 # 1. Git 설치 확인
 echo "정보: Git 설치 여부 확인 중..."
 if ! command -v git &> /dev/null; then
