@@ -94,7 +94,7 @@ fi
 
 # 8. GitHub로 푸시
 echo "정보: GitHub로 푸시 중..."
-git push "$REMOTE_NAME" main # 또는 master 브랜치 (GitHub 기본은 main)
+git push "$REMOTE_NAME" master # 또는 master 브랜치 (GitHub 기본은 main)
 
 # 푸시 실패 시 비밀번호/토큰 입력이 필요할 수 있음을 안내
 if [[ $? -ne 0 ]]; then
