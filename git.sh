@@ -94,15 +94,5 @@ fi
 
 # 8. GitHub로 푸시
 echo "정보: GitHub로 푸시 중..."
-git push "$REMOTE_NAME" main # 또는 master 브랜치 (GitHub 기본은 main)
+git push -u "$REMOTE_NAME" main # 또는 master 브랜치 (GitHub 기본은 main)
 
-# 푸시 실패 시 비밀번호/토큰 입력이 필요할 수 있음을 안내
-if [[ $? -ne 0 ]]; then
-    echo "오류: git push 실패."
-    echo "  GitHub 사용자 이름과 비밀번호(또는 개인 액세스 토큰)를 입력해야 할 수 있습니다."
-    echo "  SSH 방식을 사용 중이라면 SSH 키 설정이 올바른지 확인하세요."
-    exit 1
-fi
-echo "성공: 코드가 GitHub에 성공적으로 푸시되었습니다!"
-
-echo "--- GitHub 푸시 스크립트 완료 ---"
