@@ -27,9 +27,11 @@ else
 fi
 
 # 방화벽 DNS 서비스 허용
+#systemctl start firewalld
 #firewall-cmd --permanent --add-service=dns
 #firewall-cmd --reload
 
+systemctl enable --now named
 
 #백업 파일 설정
 if [[ -f /etc/named.conf.OLD ]]; then
@@ -120,5 +122,8 @@ server1           IN    A     192.168.10.20
 server2           IN    A     192.168.10.30
 EOF
 
-chown ${named}:${NAMED_GROUP} "$SOURCE_COMZONE_FILE"
+systemctl enable named
+systemctl restart named
+
+#chown ${named}:${NAMED_GROUP} "$SOURCE_COMZONE_FILE"
 chmod 640 "$SOURCE_COMZONE_FILE"
